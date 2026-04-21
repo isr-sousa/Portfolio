@@ -224,10 +224,12 @@ section {
     justify-content: center;
     border: 1px solid black;
     padding: 50px;
-    width: 100%;
-    height: 250px;
 }
-
+#mais img {
+    width: 80px;
+    height: auto;
+    margin: 0 auto;
+}
 #contato {
     min-height: 500px;
     padding: 100px 20px;
@@ -251,17 +253,38 @@ section {
     #card-login {
         width: 450px;           
         padding: 15px;
+        margin: 0 auto;
     }
     h1 { font-size: 2.2rem; }    
     p { font-size: 0.95rem; }     
 }
 @media (max-width: 480px) {
-    .container {
-        flex-direction: column; 
-        text-align: center;
+    section {
+        padding: 40px 15px; 
     }
-    
-    #card-login, #c1, #c2, #c3 {
-        width: 100%;              
+    #card-login {
+        width: 95%;          
+        max-width: 350px;    
+        margin: 0 auto;      
+        padding: 15px;      
+        min-height: auto;
+    }
+    #imagen {
+        max-height: 180px;   
+        width: 100%;
+        object-fit: contain; 
+    }
+    h1 {
+        font-size: 1.8rem;   
+    }
+
+    #projetos p {
+        font-size: 0.9rem;   
+        line-height: 1.4;
+    }
+    #c1, #c2, #c3 {
+        width: 100%;
+        height: auto;        
+        margin-bottom: 20px;
     }
 }
