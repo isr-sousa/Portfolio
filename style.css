@@ -8,6 +8,7 @@ html {
 }
 body {
     color: white;
+    background-color: rgba(11, 6, 31,);
 }
 nav {
     background-color: rgba(5, 17, 48, 0.5);
@@ -113,38 +114,224 @@ card-i img {
 
 /*certificados */
 #certificados {
-    background-color: rgba(11, 6, 31);
+    background-color: rgba(11, 6, 31, 1);
 }
+
 #certificados h1 {
     padding-top: 40px;
     text-align: center;
+    font-size: 3.0rem;
 }
+
 #card {
     margin-top: 40px;
-    height: 60vh;
-    border: 1px solid black;
+    height: auto;
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.card-c{
+
+.card-c {
     width: 350px;
-    height: 60vh;
     border-radius: 12px;
-    background-color: rgb(255, 255, 255,0.1);
-    border-top-width: 1px;
-    border-top-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 4px solid;
     padding: 20px;
     min-height: 350px;
-}
-.card-c-texto h2 {
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255 , 255, 0.1);
+    max-height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
 }
 
+#c1{ border-top: 4px solid #8257e5;}
+#c1 h2{color: #8257e5;}
+#c1:hover{box-shadow: 0 8px 20px rgba(130, 87, 229, 0.3);}
+
+#c2{ border-top: 4px solid #e4105d;}
+#c2:hover{box-shadow: 0 8px 20px rgba(228, 16, 93, 0.3);}
+#c2 h2{color: #e4105d;}
+
+#c3{ border-top: 4px solid #167bf7;}
+#c3:hover{box-shadow: 0 8px 20px rgba(22, 123, 247, 0.3);}
+#c3 h2{color: #167bf7;}
+
+.card-c:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border-top-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-c-texto h2 {
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+.lista-c {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.lista-c li:hover {
+    text-decoration: underline;
+}
+
+.lista-c a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    transition: color 0.2s ease;
+    margin: 10px;
+}
+#projetos {
+    background-color: rgba(11, 6, 31);
+}
+#projetos h1 {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 3.0rem;
+}
+
+footer {
+    background-color: #111827; 
+    color: #9ca3af;
+    padding-top: 3rem;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid #1f2937;
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+
+.footer-logo p {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.footer-descricao {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #9ca3af;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-col ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    transform: translateX(4px); 
+}
+
+.footer-socials ion-icon {
+    font-size: 1.2rem;
+    color: #ffffff; 
+}
+
+.footer-bottom {
+    border-top: 1px solid #1f2937;
+    padding: 1.25rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Botão Voltar ao Topo */
+.btn-top {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.btn-top:hover {
+    color: #ffff
+}
+
+.btn-top ion-icon {
+    font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+    .footer-container {
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-col ul li a {
+        justify-content: center;
+    }
+
+    .footer-col ul li a:hover {
+        transform: none; 
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 
 
