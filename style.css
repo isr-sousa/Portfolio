@@ -45,7 +45,39 @@ nav a:hover {
 }
 nav li:first-child {
     margin-right: auto;
-    pointer-events: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(5, 17, 48, 0.90);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+.menu-button {
+    display: none;
+}
+li p {
+    height: 100%;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
 }
 section {
     min-height: 100vh;      
@@ -297,6 +329,20 @@ footer p {
 
 
 /* responsividade */
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+@media(max-width: 400px){
+    .sidebar {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
   #card-i {
     flex-direction: column-reverse;

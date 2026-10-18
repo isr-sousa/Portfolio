@@ -8,11 +8,20 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="#">Israel.Dev</a></li>
+        <ul class="sidebar"> 
+            <li onclick="hideSider()"><a href="javascript:void(0)"><ion-icon name="close-outline"></ion-icon></a></li>
             <li><a href="#inicio">Início</a></li>
             <li><a href="#certificados">Certificados</a></li>
             <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contatos">Contato</a></li>
+        </ul>
+        <ul>
+            <li><p>Israel.Dev</p></li>
+            <li class="hideOnMobile"><a href="#inicio">Início</a></li>
+            <li class="hideOnMobile"><a href="#certificados">Certificados</a></li>
+            <li class="hideOnMobile"><a href="#projetos">Projetos</a></li>
+            <li class="hideOnMobile"><a href="#contatos">Contato</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="javascript:void(0)"><ion-icon name="menu-outline"></ion-icon></a></li>
         </ul>
     </nav>
     <main>
@@ -30,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="assets/israel.png" alt="Imagem do dev.">
+                <img src="assets/israel.png" alt="Imagem do dev">
             </div>
         </section>
     </main>
@@ -86,12 +95,30 @@
                 </div>
             </div>
         </section>
+        <section id="contatos">
 
-
+        </section>
     <footer>
             <p>&copy; 2026 Israel de Sousa, Todos os direitos reservados.</p>
     </footer>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+<script>
+    function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+        document.querySelector('.menu-button').style.display = 'none';
+        }
+    function hideSider(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none';
+        document.querySelector('.menu-button').style.display = 'block';
+        }
+        document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', () => {
+        hideSider();
+            });
+        });
+    </script>
 </html>
