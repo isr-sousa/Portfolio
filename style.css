@@ -188,6 +188,10 @@ section {
 #c3:hover{box-shadow: 0 8px 20px rgba(22, 123, 247, 0.3);}
 #c3 h2{color: #167bf7;}
 
+#c4{ border-top: 4px solid #ffffff;}
+#c4:hover{box-shadow: 0 8px 20px rgb(255, 255, 255);}
+#c4 h2{color: #ffffff;}
+
 .card-c:hover {
     transform: translateY(-8px);
 }
@@ -287,10 +291,26 @@ section {
     -webkit-backdrop-filter: blur(4px);
     pointer-events: none;
 }
-#container-projetos a {
+.btn-projeto {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
-    color: inherit;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 100%;
 }
+
+.btn-projeto:hover {
+    background-color: rgba(14, 13, 13, 0.74); 
+    transform: translateY(-2px);
+}
+
 .container-projetos-card:hover {
     transform: translateY(-8px);
 }
