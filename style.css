@@ -7,12 +7,38 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: white;
-    background-color: rgba(11, 6, 31,);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+:root {
+    --bg-color: rgba(11,6,31);
+    --text-color: #ffffff;
+    --nav-bg: rgba(5, 17, 48, 0.5);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --badger-bg: rgba(30, 144, 255, 0.15);
+    --badger-border: rgba(30, 144, 255, 0.3);
+    --border-bottom: rgba(255, 255, 255, 0.1);
+    --linguagens: rgba(14, 13, 13, 0.74);
+    --projeto-bg: rgba(255, 255, 255, 0.1);
+    --icon:url(assets/sun.svg);
+}
+
+
+.light {
+    --bg-color: #f0f2f5;
+    --text-color: #000000;
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --badger-bg: rgba(255, 255, 255, 0.15);
+    --badger-border: black;
+    --border-bottom: grey;
+    --linguagens: white;
+    --projeto-bg:rgba(46, 46, 46, 0.1);
+    --icon:url(assets/moon.svg);
+}
 nav {
-    background-color: rgba(5, 17, 48, 0.5);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
@@ -37,7 +63,7 @@ nav a {
     padding: 0 30px;
     display: flex;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 nav a:hover {
@@ -77,7 +103,26 @@ li p {
     padding: 0 30px;
     display: flex;
     align-items: center;
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
+    pointer-events: none;
+}
+button {
+    background-image: var(--icon);
+    background-color: transparent;
+    border: none;               
+    outline: none;               
+    cursor: pointer;      
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 20px;
+    height: 20px;
+    margin: 0 30px;
+    transition: background-image 0.3s ease;
+    filter: brightness(0) invert(1)
+}
+html.light button {
+    filter: none; 
 }
 section {
     min-height: 100vh;      
@@ -87,11 +132,11 @@ section {
 
 /*seção inicio*/
 #inicio {
-    background-color: rgba(11, 6, 31);
+    background-color: var(--bg-color);
 }
 .badger, .badger-l {
-    background-color: rgba(30, 144, 255, 0.15);
-    border: 1px solid rgba(30, 144, 255, 0.3);
+    background-color: var(--badger-bg);
+    border: 1px solid var(--badger-border);
     padding: 6px 14px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -115,7 +160,7 @@ section {
 #card-i-texto {
     flex: 1;
     text-align: left;
-    color: white;
+    color:  var(--text-color);
 }
 #card-i-texto h2 {
     padding-bottom: 20px;  
@@ -124,7 +169,7 @@ section {
     margin-top: 20px;
 }
 #card-i-texto a {
-    color: white;
+    color: var(--text-color);
     font-size: 1rem;
     text-decoration: none;
 }
@@ -147,13 +192,14 @@ section {
 
 /*certificados */
 #certificados {
-    background-color: rgba(11, 6, 31, 1);
+    background-color: var(--bg-color);
 }
 
 #certificados h1 {
     padding-top: 40px;
     text-align: center;
     font-size: 3.0rem;
+    color: var(--text-color);
 }
 
 #card {
@@ -168,8 +214,8 @@ section {
 .card-c {
     width: 350px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     padding: 20px;
     min-height: 350px;
     max-height: 400px;
@@ -188,9 +234,9 @@ section {
 #c3:hover{box-shadow: 0 8px 20px rgba(22, 123, 247, 0.3);}
 #c3 h2{color: #167bf7;}
 
-#c4{ border-top: 4px solid #ffffff;}
-#c4:hover{box-shadow: 0 8px 20px rgb(255, 255, 255);}
-#c4 h2{color: #ffffff;}
+#c4{ border-top: 4px solid var(--text-color);}
+#c4:hover{box-shadow: 0 8px 20px var(--text-color);}
+#c4 h2{color: var(--text-color);}
 
 .card-c:hover {
     transform: translateY(-8px);
@@ -198,7 +244,7 @@ section {
 
 .card-c-texto h2 {
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-bottom);
     font-size: 2rem;
     padding-bottom: 10px;
 }
@@ -215,7 +261,7 @@ section {
 
 .lista-c a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
     font-size: 1.1rem;
     display: flex;
     align-items: flex-start;
@@ -226,12 +272,13 @@ section {
 
 
 #projetos {
-    background-color: rgba(11, 6, 31);
+    background-color: var(--bg-color);
 }
 #projetos h1 {
     padding-top: 40px;
     text-align: center;
     font-size: 3.0rem;
+    color: var(--text-color);
 }
 #container-projetos {
     margin-top: 20px;
@@ -244,8 +291,8 @@ section {
 .container-projetos-card {
     width: 350px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     min-height: 350px;
     height: auto;
     padding-bottom: 20px;
@@ -267,20 +314,23 @@ section {
     text-align: left;
     font-size: 1.8rem;
     margin-top: 15px;
+    color: var(--text-color);
 }
 .container-projetos-card p {
     margin-top: 10px;
     font-size: 0.9rem;
     line-height: 1.4;
+    color: var(--text-color);
 }
 .linguagens {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
     margin-top: 20px;
+    color: var(--text-color);
 }
 .linguagens span {
-    background-color: rgba(14, 13, 13, 0.74);
+    background-color: var(--linguagens);
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 6px 14px;
     font-size: 0.85rem;
@@ -295,8 +345,8 @@ section {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.1); 
-    color: #ffffff;
+    background-color: var(--projeto-bg); 
+    color: var(--text-color);
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
