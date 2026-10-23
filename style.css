@@ -21,6 +21,7 @@ body {
     --linguagens: rgba(14, 13, 13, 0.74);
     --projeto-bg: rgba(255, 255, 255, 0.1);
     --icon:url(assets/sun.svg);
+    --sidebar: rgba(5, 17, 48, 0.90);
 }
 
 
@@ -36,6 +37,7 @@ body {
     --linguagens: white;
     --projeto-bg:rgba(46, 46, 46, 0.1);
     --icon:url(assets/moon.svg);
+    --sidebar: rgba(209, 214, 224, 0.9);;
 }
 nav {
     background-color: var(--nav-bg);
@@ -80,7 +82,7 @@ nav li:first-child {
     height: 100vh;
     width: 250px;
     z-index: 999;
-    background-color: rgba(5, 17, 48, 0.90);
+    background-color: var(--sidebar);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.1);
@@ -123,6 +125,9 @@ button {
 }
 html.light button {
     filter: none; 
+}
+button :hover {
+    color: #386bf8;
 }
 section {
     min-height: 100vh;      
@@ -434,4 +439,7 @@ footer p {
   #contato {
     justify-content: center;
   }
+}
+body, nav, .card-c, .container-projetos-card {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
