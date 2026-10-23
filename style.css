@@ -370,6 +370,18 @@ section {
     transform: translateY(-8px);
 }
 
+#contatos {
+    background-color: var(--bg-color);
+}
+#card-contatos {
+    height: auto;
+    margin-top: 40px;
+    border: 1px solid black;
+}
+#contatos h1 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+}    
 footer {
     background-color: #111827; 
     color: #9ca3af;
@@ -385,7 +397,6 @@ footer p {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    
     font-size: 0.875rem;
     text-align: center;
 }
