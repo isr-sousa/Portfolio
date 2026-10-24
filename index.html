@@ -14,7 +14,7 @@
             <li><a href="#certificados">Certificados</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contatos">Contato</a></li>
-            <button onclick="toggleMode(); hideSider()"></button>
+            <button id="switch" onclick="toggleMode(); hideSider()"></button>
         </ul>
         <ul>
             <li><p>Israel.Dev</p></li>
@@ -22,7 +22,7 @@
             <li class="hideOnMobile"><a href="#certificados">Certificados</a></li>
             <li class="hideOnMobile"><a href="#projetos">Projetos</a></li>
             <li class="hideOnMobile"><a href="#contatos">Contato</a></li>
-            <button class="hideOnMobile" onclick="toggleMode()"></button>
+            <button id="switch" class="hideOnMobile" onclick="toggleMode()"></button>
             <li class="menu-button" onclick=showSidebar()><a href="javascript:void(0)"><ion-icon name="menu-outline"></ion-icon></a></li>
         </ul>
     </nav>
@@ -123,8 +123,7 @@
                             <a href="https://github.com/isr-sousa" target="_blank">Ver perfil</a>
                         </div>
                     </div>
-                </div>
-                 <div class="social">
+                    <div class="social">
                         <ion-icon name="logo-linkedin"></ion-icon>
                         <div class="conteudo">
                             <h2>LinkedIn</h2>
@@ -132,7 +131,22 @@
                         </div>
                     </div>
                 </div>
+                <div id="formulario">
+                    <h1>Envie uma mensagem</h1>
+                    <form action="https://formsubmit.co/israel.sousadev@gmail.com" method="POST" class="form">
+                        <label for="name">Nome</label>
+                        <input type="text" name="name" id="name" required>
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" required>
+                        <label for="message">Mensagem</label>
+                        <textarea name="message" id="message" placeholder="Diga seu problema"></textarea required>
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://isr-sousa.github.io/Portfolio//obrigado.html">
+                        <button type="submit">ENVIAR</button>
+                    </form> 
+                </div>
             </div>
+            
         </section>
     <footer>
             <p>&copy; 2026 Israel de Sousa, Todos os direitos reservados.</p>
