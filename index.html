@@ -132,21 +132,17 @@
                     </div>
                 </div>
                 <div id="formulario">
-                    <h1>Envie uma mensagem</h1>
-                    <form action="https://formsubmit.co/israel.sousadev@gmail.com" method="POST" class="form">
-                        <label for="name">Nome</label>
-                        <input type="text" name="name" id="name" required>
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" required>
-                        <label for="message">Mensagem</label>
-                        <textarea name="message" id="message" placeholder="Diga seu problema"></textarea required>
+                    <h1>Envie uma Mensagem</h1>
+                    <form id="form-contato" action="https://formsubmit.co/israel.sousadev@gmail.com" method="POST" class="form">
+                        <input type="email" name="email" id="email" placeholder="Seu Email" required>
+                        <input type="text" name="name" id="name" placeholder="Seu Nome" required>
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://isr-sousa.github.io/Portfolio//obrigado.html">
+                        <textarea name="message" id="message" placeholder="Sua Mensagem" required></textarea>                     
                         <button type="submit">ENVIAR</button>
                     </form> 
+                        <p id="status-envio" style="margin-top: 15px; font-weight: bold; text-align: center;"></p>
+                    </div>
                 </div>
-            </div>
-            
         </section>
     <footer>
             <p>&copy; 2026 Israel de Sousa, Todos os direitos reservados.</p>

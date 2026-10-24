@@ -11,6 +11,7 @@ html {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    
 }
 
 :root {
@@ -149,7 +150,7 @@ html.light #switch {
 
 section {
     min-height: 100vh;      
-    padding: 60px 40px;
+    padding: 80px 40px 60px 40px;
     box-sizing: border-box;
 }
 
@@ -168,6 +169,9 @@ section {
     display: inline-block;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+}
+.badger {
+    pointer-events: none;
 }
 
 #card-i {
@@ -425,11 +429,16 @@ section {
 #card-contatos {
     height: auto;
     margin-top: 40px;
-    border: 1px solid white;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
     flex-wrap: wrap;
-    
+}
+
+#social-links {
+    flex: 1;
+    min-width: 280px;
 }
 
 #contatos h1 {
@@ -439,10 +448,11 @@ section {
 }
 
 .social {
-    margin-top: 10px;
+    margin-top: 15px;
     display: flex;
+    align-items: center;
     gap: 20px;
-    padding: 10px;
+    padding: 15px;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 10px;
@@ -460,11 +470,13 @@ section {
     background-color: #167bf7;
     border-radius: 50%;
     padding: 10px;
-    color: var(--text-color)
+    color: #ffffff;
+    flex-shrink: 0;
 }
 
 .conteudo h2 {
     color: var(--text-color);
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -484,67 +496,89 @@ section {
     text-decoration: underline;
     opacity: 0.85;
 }
+
 #formulario {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
     width: 100%;
     max-width: 32rem;
-    font-size: 1.125rem;
+    flex: 1;
+    min-width: 280px;
+    padding: 30px;
+    box-sizing: border-box;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#formulario h1{
-    font-size: 2.5rem;
+
+#formulario:hover {
+    box-shadow: 0 10px 25px rgba(22, 123, 247, 0.15);
 }
-.form label,
+
+#formulario h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 .form input,
 .form textarea,
 .form button {
     display: block;
     width: 100%;
 }
-.form label {
-    color: var(--text-color);
+
+.form input {
     line-height: 1;
-    margin-bottom: 0.5rem;
     margin-top: 10px;
 }
+
 .form input,
 .form textarea {
     font: inherit;
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid transparent;
+    border: 1px solid var(--card-border);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
     border-radius: 8px;
-    transition: border-color, box-shadown 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
+
 .form textarea {
-    min-height: 13rem;
+    min-height: 10rem;
     resize: vertical;
 }
+
 .form input:hover,
 .form input:focus,
 .form textarea:hover,
 .form textarea:focus {
     outline: none;
-    border-color: #09d;
-    box-shadow: 0 0 0 0 3px #4dc8ff;
+    border-color: #167bf7;
+    box-shadow: 0 0 0 3px rgba(22, 123, 247, 0.25);
 }
+
 .form button {
     display: block;
     padding: 1rem;
-    background: #0072c4;
-    color: var(--text-color);
+    background: #167bf7;
+    color: #ffffff;
     font: inherit;
+    font-weight: 600;
     text-transform: uppercase;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background 0.2s, transform 0.2s;
 }
+
 .form button:hover,
-.form button:focus{
+.form button:focus {
     outline: none;
     background: #09d;
+    transform: translateY(-2px);
 }
-    
-    
     
 /* Footer */
 footer {
@@ -565,7 +599,7 @@ footer p {
     text-align: center;
 }
 
-
+/* Animações */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -586,7 +620,7 @@ footer p {
     }
 }
 
-/* Responsividade */
+/* Responsividade*/
 @media (max-width: 800px) {
     .hideOnMobile {
         display: none;
@@ -606,10 +640,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 60px 20px 40px 20px;
+    }
+
     #card-i {
         flex-direction: column-reverse;
         text-align: center;            
-        padding: 0 16px;
+        padding: 0 10px;
+        margin-top: 40px;
     }
 
     #card-i-texto {
@@ -617,12 +656,26 @@ footer p {
     }
 
     #card-i img {
-        width: 260px;  
-        height: 260px;
+        width: 240px;  
+        height: 240px;
         margin-bottom: 20px;
     }
   
     #contato {
         justify-content: center;
+    }
+
+    #certificados h1, #projetos h1 {
+        font-size: 2.3rem;
+    }
+
+    #card-contatos {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #formulario {
+        max-width: 100%;
+        padding: 20px;
     }
 }
